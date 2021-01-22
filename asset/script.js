@@ -55,6 +55,7 @@ for (var i = 0; i < operator.length; i++) {
 				history = history + output;
 				if (this.id == "=") {
 					var result = eval(history);
+					// performCalculation();
 					printOutput(result);
 					printHistory("");
 				} else {
@@ -68,30 +69,30 @@ for (var i = 0; i < operator.length; i++) {
 	});
 }
 
-function performCalculation() {
-	if (calculator.firstNumber == null || calculator.operator == null) {
-		alert("Anda belum menetapkan operator");
-		return;
-	}
+// function performCalculation() {
+// 	if (calculator.firstNumber == null || calculator.operator == null) {
+// 		alert("Anda belum menetapkan operator");
+// 		return;
+// 	}
 
-	let result = 0;
-	if (calculator.operator === "+") {
-		result = parseInt(calculator.firstNumber) + parseInt(calculator.displayNumber);
-	} else {
-		result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber)
-	}
+// 	let result = 0;
+// 	if (calculator.operator === "+") {
+// 		result = parseInt(calculator.firstNumber) + parseInt(calculator.displayNumber);
+// 	} else {
+// 		result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber)
+// 	}
 
-	// objek yang akan dikirimkan sebagai argumen fungsi putHistory()
-	const history = {
-		firstNumber: calculator.firstNumber,
-		secondNumber: calculator.displayNumber,
-		operator: calculator.operator,
-		result: result
-	}
-	putHistory(history);
-	calculator.displayNumber = result;
-	renderHistory();
-}
+// 	// objek yang akan dikirimkan sebagai argumen fungsi putHistory()
+// 	const history = {
+// 		firstNumber: calculator.firstNumber,
+// 		secondNumber: calculator.displayNumber,
+// 		operator: calculator.operator,
+// 		result: result
+// 	}
+// 	putHistory(history);
+// 	calculator.displayNumber = result;
+// 	renderHistory();
+// }
 var number = document.getElementsByClassName("number");
 for (var i = 0; i < number.length; i++) {
 	number[i].addEventListener('click', function () {
